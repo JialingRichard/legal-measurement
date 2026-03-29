@@ -1,0 +1,19 @@
+{
+  "api_results": "/home/chen/dev/temp/analysis_output/xunxinzishi_qwen_2014_2021_quantile_audit_100_v2/api_rerun_results/rerun_20260328_130149_merged_best.csv",
+  "output_dir": "/home/chen/dev/temp/analysis_output/xunxinzishi_qwen_2014_2021_quantile_audit_100_v2/api_rerun_results/metrics_20260328",
+  "matched_rows": 100,
+  "models": {
+    "doubao-seed-2.0-pro": "doubao20pro",
+    "deepseek-v3.2": "deepseekv32_api",
+    "glm-4.7": "glm47",
+    "kimi-k2.5": "kimik25"
+  },
+  "files": {
+    "merged_frame": "api_rerun_merged_frame.csv",
+    "index_metrics_labels": "api_rerun_index_metrics_labels.csv",
+    "index_metrics_continuous": "api_rerun_index_metrics_continuous.csv",
+    "index_metrics_majority": "api_rerun_index_metrics_majority.csv",
+    "human_comparison_metrics": "api_rerun_human_comparison_metrics.csv",
+    "pairwise_ai_agreement": "api_rerun_pairwise_ai_agreement.csv"
+  }
+}

@@ -17,11 +17,17 @@ xz -d xunxinzishi_qwen_boundary_2013_2021_1000x9.csv.xz
 
 ## `audit_100/`
 
-- `human/`
-  - blind-audit prompt pack and completed human labels
-- `ai_single_case/`
-  - merged single-case prompt-based AI outputs
-- `ai_grouped20/`
-  - grouped-20 label outputs and summaries for each model
-- `metrics/`
-  - metric tables used in the manuscript
+- `human_audit_100sample_quantile_pack_minimal_judgment_only.md`
+  - human blind-audit pack
+- `human_audit_100sample_quantile_prefilled.csv`
+  - completed human blind-audit labels
+- `ai_blind_audit_pack_minimal.md`
+  - AI blind-audit prompt pack
+- `ai_grouped20/*.csv`
+  - grouped-20 label outputs for each model
+- `group20_merged_frame.csv`
+  - merged grouped-20 comparison frame used in the manuscript
+- `ai_single_case_human_metrics.csv`
+  - single-case AI versus human summary metrics
+- `ai_single_case_metrics_summary.json`
+  - single-case rerun summary metadata

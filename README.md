@@ -71,9 +71,9 @@ prompt-based comparison experiments.
 ### `data/audit_100/`
 
 - human blind-audit pack and completed audit labels
-- single-case prompt-based AI comparison outputs
-- grouped-20 prompt-based AI comparison outputs
-- recomputed metric tables used in the manuscript
+- grouped-20 prompt-based AI label outputs for each model
+- grouped comparison merged frame used in the manuscript
+- single-case prompt-based AI summary metrics
 
 See [`data/README.md`](./data/README.md) for file-level guidance.
 Checksums for the released paper and data files are listed in
