@@ -1,21 +1,20 @@
 # legal-measurement
 
-Code release for the paper project on auditable measurement of contested legal
-constructs with large language models.
+Public code-and-data companion repository for the paper project on auditable
+measurement of contested legal constructs with large language models.
 
-This public repository is intentionally conservative:
+This repository includes:
 
-- it includes the core scoring pipeline
-- it includes manuscript-side analysis and prompting scripts
-- it does **not** include the full LaTeX paper source tree
-- it does **not yet** include the research dataset release
+- the core scoring and analysis code
+- the compiled manuscript PDF
+- the paper's 9000-case master research table, which includes case text and
+  framework outputs
+- the 100-case human and AI blind-audit materials used in the validation
 
-The goal is to keep the public repository centered on code and reproducible
-analysis utilities. The paper is maintained separately in a local working
-directory, and future public updates can add the compiled manuscript PDF
-without mirroring the full private LaTeX working tree.
+The full private LaTeX working tree is not mirrored here. The paper is released
+as a compiled PDF in `paper/`.
 
-## Current Contents
+## Repository Layout
 
 ```text
 legal-measurement/
@@ -23,12 +22,21 @@ legal-measurement/
 │   ├── xunxinzishi_qwen_boundary_benchmark.py
 │   └── scripts/
 ├── data/
+│   ├── audit_100/
+│   └── corpus_9000/
+├── paper/
+│   └── legal-measurement-paper.pdf
 ├── LICENSE
 ├── DATA_NOTICE.md
 └── README.md
 ```
 
-## Included Code
+## Paper
+
+- `paper/legal-measurement-paper.pdf`
+  - compiled manuscript corresponding to the current public release
+
+## Code
 
 - `code/xunxinzishi_qwen_boundary_benchmark.py`
   - main extraction and four-dimension scoring pipeline
@@ -51,20 +59,28 @@ The prompt-based rerun scripts do not contain any hard-coded API key. They
 expect the environment variable `VOLCENGINE_CODING_API_KEY` when rerunning the
 prompt-based comparison experiments.
 
-## Planned Additions
+## Data
 
-Later releases can add:
+### `data/corpus_9000/`
 
-- the compiled paper PDF
-- the curated 9000-case corpus release used in the paper
-- the 100-case human and AI blind-audit release package
+- `xunxinzishi_qwen_boundary_2013_2021_1000x9.csv.xz`
+  - compressed public release of the paper's 9000-case master research table
+  - this file contains case metadata, full text, extracted semantic fields,
+    quotes, dimension scores, and final framework outputs
+
+### `data/audit_100/`
+
+- human blind-audit pack and completed audit labels
+- single-case prompt-based AI comparison outputs
+- grouped-20 prompt-based AI comparison outputs
+- recomputed metric tables used in the manuscript
+
+See [`data/README.md`](./data/README.md) for file-level guidance.
+Checksums for the released paper and data files are listed in
+[`SHA256SUMS.txt`](./SHA256SUMS.txt).
 
 ## License
 
 Code in this repository is released under the MIT license; see
-[`LICENSE`](./LICENSE).
-
-## Data Notice
-
-See [`DATA_NOTICE.md`](./DATA_NOTICE.md) for the repository-level note on data
-release boundaries.
+[`LICENSE`](./LICENSE). Data release conditions are described separately in
+[`DATA_NOTICE.md`](./DATA_NOTICE.md).
