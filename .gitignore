@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+paper/main.aux
+paper/main.log
+paper/
+data/
