@@ -3,15 +3,17 @@
 Code release for the paper project on auditable measurement of contested legal
 constructs with large language models.
 
-This initial public release is intentionally conservative:
+This public repository is intentionally conservative:
 
 - it includes the core scoring pipeline
 - it includes manuscript-side analysis and prompting scripts
-- it does **not yet** include the paper source
+- it does **not** include the full LaTeX paper source tree
 - it does **not yet** include the research dataset release
 
-The goal of this first step is to establish a clean public code repository
-before adding the manuscript and curated data package in follow-up commits.
+The goal is to keep the public repository centered on code and reproducible
+analysis utilities. The paper is maintained separately in a local working
+directory, and future public updates can add the compiled manuscript PDF
+without mirroring the full private LaTeX working tree.
 
 ## Current Contents
 
@@ -20,6 +22,7 @@ legal-measurement/
 ├── code/
 │   ├── xunxinzishi_qwen_boundary_benchmark.py
 │   └── scripts/
+├── data/
 ├── LICENSE
 ├── DATA_NOTICE.md
 └── README.md
@@ -52,7 +55,7 @@ prompt-based comparison experiments.
 
 Later releases can add:
 
-- the paper source and arXiv package
+- the compiled paper PDF
 - the curated 9000-case corpus release used in the paper
 - the 100-case human and AI blind-audit release package
 
