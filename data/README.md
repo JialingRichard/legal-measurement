@@ -17,12 +17,8 @@ xz -d xunxinzishi_qwen_boundary_2013_2021_1000x9.csv.xz
 
 ## `audit_100/`
 
-- `human_audit_100sample_quantile_pack_minimal_judgment_only.md`
-  - human blind-audit pack
 - `human_audit_100sample_quantile_prefilled.csv`
   - completed human blind-audit labels
-- `ai_blind_audit_pack_minimal.md`
-  - AI blind-audit prompt pack
 - `ai_grouped20/*.csv`
   - grouped-20 label outputs for each model
 - `group20_merged_frame.csv`

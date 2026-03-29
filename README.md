@@ -70,7 +70,7 @@ prompt-based comparison experiments.
 
 ### `data/audit_100/`
 
-- human blind-audit pack and completed audit labels
+- completed human blind-audit labels
 - grouped-20 prompt-based AI label outputs for each model
 - grouped comparison merged frame used in the manuscript
 - single-case prompt-based AI summary metrics
