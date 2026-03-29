@@ -1,6 +1,6 @@
 {
-  "api_results": "/home/chen/dev/temp/analysis_output/xunxinzishi_qwen_2014_2021_quantile_audit_100_v2/api_rerun_results/rerun_20260328_130149_merged_best.csv",
-  "output_dir": "/home/chen/dev/temp/analysis_output/xunxinzishi_qwen_2014_2021_quantile_audit_100_v2/api_rerun_results/metrics_20260328",
+  "api_results": "single-case prompt comparison results were summarized offline before public release",
+  "output_dir": "public-release-summary",
   "matched_rows": 100,
   "models": {
     "doubao-seed-2.0-pro": "doubao20pro",

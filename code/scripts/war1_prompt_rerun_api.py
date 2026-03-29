@@ -226,7 +226,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--input-md",
-        default=str(ROOT / "data" / "audit_100" / "human" / "ai_blind_audit_pack_minimal.md"),
+        required=True,
+        help="Path to a user-prepared markdown prompt pack for single-case evaluation",
     )
     parser.add_argument(
         "--output-dir",
@@ -240,13 +241,14 @@ def main() -> None:
     parser.add_argument("--retries", type=int, default=2)
     parser.add_argument(
         "--base-url",
-        default="https://ark.cn-beijing.volces.com/api/coding/v3",
+        default="https://YOUR_API_BASE_URL/v1",
+        help="Provider-compatible chat completions base URL placeholder",
     )
     args = parser.parse_args()
 
-    api_key = os.environ.get("VOLCENGINE_CODING_API_KEY")
+    api_key = os.environ.get("MODEL_API_KEY")
     if not api_key:
-        raise SystemExit("Missing VOLCENGINE_CODING_API_KEY")
+        raise SystemExit("Missing MODEL_API_KEY")
 
     samples = load_samples(Path(args.input_md))
     selected_ids = parse_sample_ids(args.sample_ids, (s.sample_id for s in samples))

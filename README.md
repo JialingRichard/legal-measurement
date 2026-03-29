@@ -55,9 +55,10 @@ legal-measurement/
 - `code/scripts/war1_ieee_extra_analysis.py`
   - extra analysis helper used during manuscript preparation
 
-The prompt-based rerun scripts do not contain any hard-coded API key. They
-expect the environment variable `VOLCENGINE_CODING_API_KEY` when rerunning the
-prompt-based comparison experiments.
+The prompt-based rerun scripts do not contain any hard-coded API key or
+provider endpoint. They expect a generic `MODEL_API_KEY` environment variable
+and a user-supplied `--base-url` / `--input-md` when rerunning the prompt-based
+comparison experiments.
 
 ## Data
 
@@ -70,7 +71,7 @@ prompt-based comparison experiments.
 
 ### `data/audit_100/`
 
-- completed human blind-audit labels
+- released human blind-audit labels
 - grouped-20 prompt-based AI label outputs for each model
 - grouped comparison merged frame used in the manuscript
 - single-case prompt-based AI summary metrics

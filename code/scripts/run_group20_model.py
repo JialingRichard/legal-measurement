@@ -12,8 +12,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE_URL_DEFAULT = "https://ark.cn-beijing.volces.com/api/coding/v3/chat/completions"
-DEFAULT_INPUT = ROOT / "data" / "audit_100" / "human" / "ai_blind_audit_pack_minimal.md"
+BASE_URL_DEFAULT = "https://YOUR_API_BASE_URL/v1/chat/completions"
 
 SECTION_RE = re.compile(r"^##\s+(\d+)\.\s*$", re.M)
 TEXT_BLOCK_RE = re.compile(r"### 全文\s+```text\s*(.*?)\s*```", re.S)
@@ -24,8 +23,16 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)
     parser.add_argument("--outdir", required=True)
-    parser.add_argument("--input-md", default=str(DEFAULT_INPUT))
-    parser.add_argument("--base-url", default=BASE_URL_DEFAULT)
+    parser.add_argument(
+        "--input-md",
+        required=True,
+        help="Path to a user-prepared markdown prompt pack for grouped evaluation",
+    )
+    parser.add_argument(
+        "--base-url",
+        default=BASE_URL_DEFAULT,
+        help="Provider-compatible chat completions endpoint placeholder",
+    )
     parser.add_argument("--batch-size", type=int, default=20)
     parser.add_argument("--max-tokens", type=int, default=4000)
     parser.add_argument("--timeout", type=int, default=180)
@@ -107,9 +114,9 @@ def parse_results(content: str) -> list[dict] | None:
 
 def main() -> None:
     args = parse_args()
-    api_key = os.environ.get("VOLCENGINE_CODING_API_KEY")
+    api_key = os.environ.get("MODEL_API_KEY")
     if not api_key:
-        raise SystemExit("Missing VOLCENGINE_CODING_API_KEY")
+        raise SystemExit("Missing MODEL_API_KEY")
 
     root = Path(args.outdir)
     root.mkdir(parents=True, exist_ok=True)
